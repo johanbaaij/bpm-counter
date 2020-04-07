@@ -1,5 +1,7 @@
 # bpm-counter
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/36e3a30a778e8e537aca/maintainability)](https://codeclimate.com/github/johanbaaij/bpm-counter/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/36e3a30a778e8e537aca/test_coverage)](https://codeclimate.com/github/johanbaaij/bpm-counter/test_coverage)
+
 JavaScript library for calculating BPMs.
 
 ## Usage
