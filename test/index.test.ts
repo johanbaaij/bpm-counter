@@ -45,4 +45,10 @@ describe('BpmCounter', () => {
     const counter = new BpmCounter([500, 1000, 1500, 2000, 2500]);
     expect(counter.intervalTooLong(4500)).toBe(true);
   });
+
+  it('counter resets if intervalTooLong', () => {
+    const counter = new BpmCounter([500, 1000, 1500, 2000, 2500]);
+    counter.tap(3500);
+    expect(counter.bpm).toBe(0);
+  });
 });
