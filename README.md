@@ -8,6 +8,12 @@
 
 JavaScript library for calculating beats per minute.
 
+## Install
+
+```sh
+yarn add bpm-counter
+```
+
 ## Usage
 
 ```js
