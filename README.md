@@ -1,6 +1,6 @@
 # bpm-counter
 
-![CI](https://github.com/johanbaaij/bpm-counter/workflows/CI/badge.svg) [![Maintainability](https://api.codeclimate.com/v1/badges/36e3a30a778e8e537aca/maintainability)](https://codeclimate.com/github/johanbaaij/bpm-counter/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/36e3a30a778e8e537aca/test_coverage)](https://codeclimate.com/github/johanbaaij/bpm-counter/test_coverage)
+![CI](https://github.com/johanbaaij/bpm-counter/workflows/CI/badge.svg) ![npm](https://img.shields.io/npm/v/bpm-counter) ![GitHub](https://img.shields.io/github/license/johanbaaij/bpm-counter) [![Maintainability](https://api.codeclimate.com/v1/badges/36e3a30a778e8e537aca/maintainability)](https://codeclimate.com/github/johanbaaij/bpm-counter/maintainability) [![Test Coverage](https://api.codeclimate.com/v1/badges/36e3a30a778e8e537aca/test_coverage)](https://codeclimate.com/github/johanbaaij/bpm-counter/test_coverage)
 
 JavaScript library for calculating BPMs.
 
