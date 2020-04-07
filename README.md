@@ -6,7 +6,7 @@ JavaScript library for calculating BPMs.
 
 ```js
 import BpmCounter from 'bpm-counter';
-const counter = BpmCounter.new();
+const counter = new BpmCounter();
 
 // Cal the tap method with your touch event
 counter.tap();
