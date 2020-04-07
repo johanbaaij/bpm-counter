@@ -30,6 +30,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "jest": {
+    "collectCoverage": true
+  },
   "name": "bpm-counter",
   "author": "Johan Baaij",
   "module": "dist/bpm-counter.esm.js",
