@@ -1,5 +1,7 @@
 # bpm-counter
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/66364715c34b417f8205eeccf9f5b6ea)](https://app.codacy.com/manual/johanbaaij/bpm-counter?utm_source=github.com&utm_medium=referral&utm_content=johanbaaij/bpm-counter&utm_campaign=Badge_Grade_Settings)
+
 JavaScript library for calculating BPMs.
 
 ## Usage
