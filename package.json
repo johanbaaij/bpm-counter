@@ -38,12 +38,24 @@
   "author": "Johan Baaij",
   "module": "dist/bpm-counter.esm.js",
   "devDependencies": {
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/git": "^9.0.0",
     "@types/jest": "^25.2.1",
     "husky": "^4.2.3",
     "semantic-release": "^17.0.4",
     "tsdx": "^0.13.1",
     "tslib": "^1.11.1",
     "typescript": "^3.8.3"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      "@semantic-release/npm",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   },
   "repository": {
     "type": "git",
