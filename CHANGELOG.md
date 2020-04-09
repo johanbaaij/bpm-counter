@@ -4,5 +4,3 @@
 ### Features
 
 * reset for non chronological timestamps ([eefddff](https://github.com/johanbaaij/bpm-counter/commit/eefddff7ed7685e8781ffa840f20d9c4f5ab5622))
-
-# Changelog
