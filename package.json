@@ -13,10 +13,10 @@
   },
   "scripts": {
     "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsdx build --format cjs,esm,umd --name BpmCounter",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "tsdx build --format cjs,esm,umd --name BpmCounter",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {},
