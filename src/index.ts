@@ -1,6 +1,6 @@
 const INTERVAL_THRESHOLD = 1.5;
 
-export default class BpmCounter {
+export class Counter {
   taps: Array<number>;
 
   constructor(taps: number[] = []) {
@@ -68,3 +68,5 @@ export default class BpmCounter {
     return intervals;
   }
 }
+
+export default Counter;

@@ -9,14 +9,14 @@
 
 JavaScript library for calculating beats per minute.
 
-:stopwatch: Uses `performance.now()` by default, override with your own timestamps if necessary    
+:stopwatch: Uses `performance.now()` by default, override with your own timestamps if necessary  
 :recycle: Automatically resets when pausing between taps
 
 ## Usage
 
 ```js
-import BpmCounter from 'bpm-counter';
-const counter = new BpmCounter();
+import { Counter } from 'bpm-counter';
+const counter = new Counter();
 ```
 
 Call the `tap()` method with a touch or click event.
@@ -37,7 +37,7 @@ counter.tap(1500);
 Or initialize with an array of timestamps in ms.
 
 ```js
-const counter = new BpmCounter([0, 500, 1000, 1500]);
+const counter = new Counter([0, 500, 1000, 1500]);
 ```
 
 To read the BPM:
