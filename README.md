@@ -9,54 +9,61 @@
 
 JavaScript library for calculating beats per minute.
 
-## Install
-
-```sh
-yarn add bpm-counter
-```
+:stopwatch: Uses `performance.now()` by default, override with your own timestamps if necessary    
+:recycle: Automatically resets when pausing between taps
 
 ## Usage
 
 ```js
 import BpmCounter from 'bpm-counter';
 const counter = new BpmCounter();
+```
 
-// Cal the tap method with your touch event
-counter.tap();
-counter.tap();
-counter.tap();
-counter.tap();
+Call the `tap()` method with a touch or click event.
 
-// Optionally you can pass the timestamp in ms yourself
+```js
+counter.tap();
+```
+
+Optionally you can pass timestamps in ms.
+
+```js
 counter.tap(0);
 counter.tap(500);
 counter.tap(1000);
 counter.tap(1500);
-
-counter.bpm;
-// -> 120
-
-// Waiting 1.5 * average interval length will reset the counter. To reset manually simply call reset()
-counter.reset();
-counter.bpm;
-// -> 0
 ```
 
-## Local Development
+Or initialize with an array of timestamps in ms.
 
-This project was bootstrapped with [TSDX](https://github.com/jaredpalmer/tsdx).
-Below is a list of commands you will probably find useful.
+```js
+const counter = new BpmCounter([0, 500, 1000, 1500]);
+```
 
-### `npm start` or `yarn start`
+To read the BPM:
 
-Runs the project in development/watch mode. Your project will be rebuilt upon changes.
+```js
+counter.bpm;
+```
 
-### `npm run build` or `yarn build`
+Waiting 1.5 \* average interval length will reset the counter. To reset manually:
 
-Bundles the package to the `dist` folder.
-The package is optimized and bundled with Rollup into multiple formats (CommonJS, UMD, and ES Module).
+```js
+counter.reset();
+```
 
-### `npm test` or `yarn test`
+## Installation
 
-Runs the test watcher (Jest) in an interactive mode.
-By default, runs tests related to files changed since the last commit.
+```sh
+yarn add bpm-counter
+```
+
+or
+
+```sh
+npm install bpm-counter
+```
+
+## Credits
+
+- [TSDX](https://github.com/jaredpalmer/tsdx) – Zero-config CLI for TypeScript package development
