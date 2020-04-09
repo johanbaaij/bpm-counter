@@ -12,17 +12,15 @@ export default class BpmCounter {
   };
 
   tap = (ms: number = performance.now()) => {
-    if (this.intervalTooLong(ms)) {
+    if (!this.timeStampChronological(ms) || this.intervalTooLong(ms)) {
       return this.reset();
     }
     this.taps.push(ms);
   };
 
-  get bpm() {
-    if (this.intervalAverageInMs) {
-      return 60000 / this.intervalAverageInMs;
-    }
-    return 0;
+  timeStampChronological(tapInMs: number) {
+    if (this.taps.length === 0) return true;
+    return this.lastTapInMs < tapInMs;
   }
 
   intervalTooLong(tapInMs: number) {
@@ -32,6 +30,9 @@ export default class BpmCounter {
   }
 
   get lastTapInMs() {
+    if (this.taps.length < 2) {
+      return 0;
+    }
     return this.taps[this.taps.length - 1];
   }
 
@@ -49,6 +50,13 @@ export default class BpmCounter {
         }
       }
     );
+  }
+
+  get bpm() {
+    if (this.intervalAverageInMs) {
+      return 60000 / this.intervalAverageInMs;
+    }
+    return 0;
   }
 
   get intervalsInMs() {
