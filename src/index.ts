@@ -18,22 +18,15 @@ export default class BpmCounter {
     this.taps.push(ms);
   };
 
-  get bpm() {
-    if (this.intervalAverageInMs) {
-      return 60000 / this.intervalAverageInMs;
-    }
-    return 0;
+  timeStampChronological(tapInMs: number) {
+    if (this.taps.length === 0) return true;
+    return this.lastTapInMs < tapInMs;
   }
 
   intervalTooLong(tapInMs: number) {
     if (this.intervalAverageInMs === 0) return false;
     const lastIntervalInMs = tapInMs - this.lastTapInMs;
     return lastIntervalInMs > this.intervalAverageInMs * INTERVAL_THRESHOLD;
-  }
-
-  timeStampChronological(tapInMs: number) {
-    if (this.taps.length === 0) return true;
-    return this.lastTapInMs < tapInMs;
   }
 
   get lastTapInMs() {
@@ -57,6 +50,13 @@ export default class BpmCounter {
         }
       }
     );
+  }
+
+  get bpm() {
+    if (this.intervalAverageInMs) {
+      return 60000 / this.intervalAverageInMs;
+    }
+    return 0;
   }
 
   get intervalsInMs() {
