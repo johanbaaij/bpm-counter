@@ -12,18 +12,18 @@ export class Counter {
   };
 
   tap = (ms: number = performance.now()) => {
-    if (!this.timeStampChronological(ms) || this.intervalTooLong(ms)) {
+    if (!this.isTimeStampChronological(ms) || this.isIntervalTooLong(ms)) {
       return this.reset();
     }
     this.taps.push(ms);
   };
 
-  timeStampChronological(tapInMs: number) {
+  isTimeStampChronological(tapInMs: number) {
     if (this.taps.length === 0) return true;
     return this.lastTapInMs < tapInMs;
   }
 
-  intervalTooLong(tapInMs: number) {
+  isIntervalTooLong(tapInMs: number) {
     if (this.intervalAverageInMs === 0) return false;
     const lastIntervalInMs = tapInMs - this.lastTapInMs;
     return lastIntervalInMs > this.intervalAverageInMs * INTERVAL_THRESHOLD;

@@ -43,7 +43,7 @@ describe('Counter', () => {
 
   it('intervalTooLong check works', () => {
     const counter = new Counter([500, 1000, 1500, 2000, 2500]);
-    expect(counter.intervalTooLong(4500)).toBe(true);
+    expect(counter.isIntervalTooLong(4500)).toBe(true);
   });
 
   it('counter resets if intervalTooLong', () => {
