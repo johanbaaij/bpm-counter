@@ -12,7 +12,7 @@ export default class BpmCounter {
   };
 
   tap = (ms: number = performance.now()) => {
-    if (this.intervalTooLong(ms)) {
+    if (!this.timeStampChronological(ms) || this.intervalTooLong(ms)) {
       return this.reset();
     }
     this.taps.push(ms);
@@ -31,7 +31,15 @@ export default class BpmCounter {
     return lastIntervalInMs > this.intervalAverageInMs * INTERVAL_THRESHOLD;
   }
 
+  timeStampChronological(tapInMs: number) {
+    if (this.taps.length === 0) return true;
+    return this.lastTapInMs < tapInMs;
+  }
+
   get lastTapInMs() {
+    if (this.taps.length < 2) {
+      return 0;
+    }
     return this.taps[this.taps.length - 1];
   }
 

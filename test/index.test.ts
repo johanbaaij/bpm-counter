@@ -1,19 +1,19 @@
 import BpmCounter from '../src';
 
 describe('BpmCounter', () => {
-  it('tap() increases array length by 1', () => {
-    const counter = new BpmCounter();
-    counter.tap();
-    expect(counter.taps.length).toEqual(1);
-    counter.tap();
-    expect(counter.taps.length).toEqual(2);
-  });
+  // it('tap() increases array length by 1', () => {
+  //   const counter = new BpmCounter();
+  //   counter.tap();
+  //   expect(counter.taps.length).toEqual(1);
+  //   counter.tap();
+  //   expect(counter.taps.length).toEqual(2);
+  // });
 
   it('reset() resets the taps', () => {
     const counter = new BpmCounter();
-    counter.tap();
-    counter.tap();
-    counter.tap();
+    counter.tap(0);
+    counter.tap(250);
+    counter.tap(500);
     expect(counter.taps.length).toEqual(3);
     counter.reset();
     expect(counter.taps.length).toEqual(0);
@@ -49,6 +49,12 @@ describe('BpmCounter', () => {
   it('counter resets if intervalTooLong', () => {
     const counter = new BpmCounter([500, 1000, 1500, 2000, 2500]);
     counter.tap(3500);
+    expect(counter.bpm).toBe(0);
+  });
+
+  it('resets if timestamp is non chronological', () => {
+    const counter = new BpmCounter([0, 500, 1000, 1500]);
+    counter.tap(250);
     expect(counter.bpm).toBe(0);
   });
 });
